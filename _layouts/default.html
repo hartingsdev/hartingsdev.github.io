@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <head>
+        {% include meta.html %}
+
+        <!-- Favicon and title -->
+        <title>{{ page.title }}</title>
+        <link rel="icon" href="/path/to/fav.png">
+
+        <!-- CSS, XML-->
+        <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="/feed.xml" />
+
+    </head>
+
+    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-mode-onload="true">
+        {% comment %}
+        <!-- Modals go here -->
+        <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
+        {% endcomment %}
+      
+        <!-- Page wrapper start -->
+        <div class="page-wrapper with-navbar {% if layout.useSidebar == true %} with-sidebar {% endif %}">
+          {% comment %}
+          <!-- Sticky alerts (toasts), empty container -->
+          <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
+          <div class="sticky-alerts"></div>
+          {% endcomment %}
+
+          <!-- Navbar start -->
+          <nav class="navbar">
+            {% include navbar.html %}
+            <!-- Reference: https://www.gethalfmoon.com/docs/navbar -->
+          </nav>
+          <!-- Navbar end -->
+
+          {% if layout.useSidebar == true %}
+          <!-- Sidebar start -->
+          <div class="sidebar">
+            <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
+          </div>
+          <!-- Sidebar end -->
+          {% endif %}
+      
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+              {{ content }}
+            <!--
+              Add your page's main content here
+              Examples:
+              1. https://www.gethalfmoon.com/docs/content-and-cards/#building-a-page
+              2. https://www.gethalfmoon.com/docs/grid-system/#building-a-dashboard
+            -->
+          </div>
+          <!-- Content wrapper end -->
+      
+        </div>
+        <!-- Page wrapper end -->
+
+        <!-- Required by Halfmoon: Halfmoon JS -->
+        <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+    </body>
+</html>
