@@ -1,0 +1,26 @@
+---
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Robert Hartings's Blog</title>
+	<link href="https://hartings.dev/blog/atom.xml" rel="self"/>
+	<link href="https://hartings.dev/blog"/>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>https://hartings.dev/blog</id>
+	<author>
+		<name>Robert Hartings</name>
+		<email>robert@hartings.dev</email>
+	</author>
+
+	{% for post in site.posts %}
+		<entry>
+			<title>{{ post.title }}</title>
+			<link href="https://hartings.dev{{ post.url }}"/>
+			<updated>{{ post.date | date_to_xmlschema }}</updated>
+			<id>https://hartings.dev{{ post.id }}</id>
+			<content type="html">{{ post.content | xml_escape }}</content>
+		</entry>
+	{% endfor %}
+
+</feed>
