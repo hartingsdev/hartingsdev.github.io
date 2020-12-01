@@ -5,7 +5,7 @@
     <div class="navbar-content">
       <button class="btn btn-action" type="button">
         <i class="fa fa-bars" aria-hidden="true"></i>
-        <span class="sr-only">Toggle sidebar</span> <!-- sr-only = show only on screen readers -->
+        <span class="sr-only">Toggle sidebar</span>
       </button>
     </div>
     {% endcomment %}
@@ -18,11 +18,14 @@
 
     <!-- Navbar nav -->
     <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
-      <li class="nav-item {% if current[1] != "blog" %} active {% endif %}">
+      <li class="nav-item {% unless current[1] %} active {% endunless %}">
         <a href="/" class="nav-link">Home</a>
       </li>
       <li class="nav-item {% if current[1] == "blog" %} active {% endif %}">
         <a href="/blog" class="nav-link">Blog</a>
+      </li>
+      <li class="nav-item {% if current[1] == "portfolio" %} active {% endif %}">
+        <a href="/portfolio" class="nav-link">Portfolio</a>
       </li>
     </ul>
 
@@ -32,7 +35,7 @@
 
   <div class="navbar-content ml-auto">
     <button class="btn btn-action mr-5" type="button" onclick="halfmoon.toggleDarkMode()" aria-label="Toggle dark mode">
-        <i class="fa fa-moon-o" aria-hidden="true"></i>
+        <i class="fal fa-moon" aria-hidden="true"></i>
     </button>
     <div class="dropdown with-arrow hidden-md-and-up">
         <button class="btn navbar-menu-btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn" aria-haspopup="true" aria-expanded="false">

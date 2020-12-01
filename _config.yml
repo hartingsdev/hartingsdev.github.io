@@ -1,4 +1,5 @@
 name: Robert Hartings
+title: Hallo Welt
 description: Computer Sience Student
 domain: hartings.dev
 
@@ -7,3 +8,9 @@ kramdown:
   input: GFM
 
 permalink: /blog/:year/:month/:day/:title
+
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+
+gem 'github-pages', '170', group: :jekyll_plugins
